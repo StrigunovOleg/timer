@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time</title>
+    <style>
+        .main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .timer {
+            text-align: center;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="timer">
+            <div id="time">0</div>
+            <div id="status">Вдох</div>
+        </div>
+    </div>
+</body>
+    <script>
+        let count = 0
+        let breath = true
+        
+        const st = document.querySelector('#status')
+
+        setInterval(() => {
+            if (count == 3 && breath) {
+                count = 0
+                breath = false
+                st.innerHTML = "Выдох"
+            } else if (count == 9) {
+                count = 0
+                breath = true
+                st.innerHTML = "Вдох"
+            }
+
+            count++
+            time.innerHTML = count
+
+          
+            
+        }, 1000)
+    </script>
+</html>
